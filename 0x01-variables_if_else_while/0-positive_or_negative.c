@@ -2,8 +2,8 @@
 #include <time.h>
 #include <stdio.h>
 
-/** 
- * main - print a random number
+/**
+ * main - print random number
  *
  * Description - main function
  * Return:0
