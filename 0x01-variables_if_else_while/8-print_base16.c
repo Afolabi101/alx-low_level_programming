@@ -1,6 +1,6 @@
 #include <stdio.h>
 /**
- * main - random number 
+ * main
  *
  * Description - main function
  * Return :0
@@ -10,11 +10,11 @@ int main(void)
 	char c;
 	char d;
 
-	for(c = 0; c <= 9; c++)
+	for( c = 0; c <= 9; c++)
 	{
 		putchar(c + '0');
 	}
-	for(d = 'a'; d <= 'f'; d++)
+	for( d = 'a'; d <= 'f'; d++)
 	{
 		putchar(d);
 	}
