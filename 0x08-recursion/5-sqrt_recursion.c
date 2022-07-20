@@ -1,31 +1,31 @@
 #include "main.h"
 
 /**
- * prime_check - checks to see if number is prime
- * @f: factor check
- * @p: possible prime number
+ * counter - function with two argument
+ * @root: int type 1st argument
+ * @n: int type 2nd argument
  *
- * Return: 1 if prime, 0 if not
+ * Description: to test conditions and return root
+ * Return: value of root
  */
-int prime_check(int f, int p)
+int counter(int root, int n)
 {
-	if (p < 2 || p % f == 0)
-		return (0);
-	else if (f > p / 2)
-		return (1);
+	if (n == (root * root))
+		return (root);
+	else if (root == n || root == -n)
+		return (-1);
 	else
-		return (prime_check(f + 1, p));
+		return (counter(root + 1, n));
 }
 
 /**
- * is_prime_number - states if number is prime
- * @n: number to check
+ * _sqrt_recursion - function with one argument
+ * @n: int type argument
  *
- * Return: 1 if prime, 0 if not
+ * Description: returns the natural square root of a number
+ * Return: value of n
  */
-int is_prime_number(int n)
+int _sqrt_recursion(int n)
 {
-	if (n == 2)
-		return (1);
-	return (prime_check(2, n));
+	return (counter(0, n));
 }
