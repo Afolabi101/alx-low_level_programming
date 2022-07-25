@@ -1,38 +1,45 @@
+#include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
-#include <ctype.h>
+#include <string.h>
 
 /**
- * main - sum of  the args
- * @argc: Argument count
- * @argv: Array of argument strings
- *
- * Return: 0 for successful exit
- */
+  * main - Prints the sum of positive argument numbers
+  * @argc: argument count
+  * @argv: argument vector
+  *
+  * Return: Always 0
+  */
 int main(int argc, char *argv[])
 {
+	int i;
+	unsigned int k, sum = 0;
+	char *e;
 
-	int i = 0;
-	int sum = 0;
-
-	if (argc == 1)
-	{
-		printf("0\n");
-	}
-	else
+	if (argc > 1)
 	{
 		for (i = 1; i < argc; i++)
 		{
-			if (!isdigit(*argv[i]))
+			e = argv[i];
+
+			for (k = 0; k < strlen(e); k++)
 			{
-				printf("Error\n");
+				if (e[k] < 48 || e[k] > 57)
+				{
+					printf("Error\n");
+					return (1);
+				}
 			}
-			else
-			{
-				sum += atoi(argv[i]);
-			}
+
+			sum += atoi(e);
+			e++;
 		}
+
 		printf("%d\n", sum);
+	}
+	else
+	{
+		printf("0\n");
 	}
 
 	return (0);
